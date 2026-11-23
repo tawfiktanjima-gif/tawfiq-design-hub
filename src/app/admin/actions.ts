@@ -20,7 +20,7 @@ export async function login(email: string, password: string): Promise<R> {
   if (!hasSupabase()) return { error: "Supabase কনফিগার করা হয়নি" };
   const db = supabaseServer();
   const { data, error } = await db.auth.signInWithPassword({ email: email.trim(), password });
-  if (error || !data.user) return { error: "ইমেইল বা পাসওয়ার্ড সঠিক নয়" };
+  if (error || !data.user) return { error: error?.message ?? "Supabase login failed" };
   if (data.user.app_metadata?.role !== "admin") { await db.auth.signOut(); return { error: "এই অ্যাকাউন্টের অ্যাডমিন অনুমতি নেই" }; }
   return { ok: true };
 }
