@@ -1,0 +1,4 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+body{@apply bg-[#f6faf6] text-[#10281a] font-bn dark:bg-[#0b140e] dark:text-[#e8f3ea];}
+@layer components{.wrap{@apply mx-auto max-w-[1180px] px-4;}.card{@apply rounded-2xl border border-[#dbe7dc] bg-white shadow-sm dark:border-[#244030] dark:bg-[#132017];}
+.btn{@apply inline-flex items-center justify-center rounded-full bg-emerald px-5 py-2 font-semibold text-white transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold;}}

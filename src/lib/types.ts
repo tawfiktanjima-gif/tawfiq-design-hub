@@ -1,0 +1,5 @@
+export type Category = { id: string; name: string; slug: string; icon: string | null; description: string | null; sort_order: number; count?: number };
+export type Resource = { id: string; title: string; slug: string; description: string | null; category_id: string | null; preview_image: string | null; preview_images: string[]; file_path: string; file_name: string | null; file_type: string | null; file_size: number | null; download_count: number; featured: boolean; status: "draft" | "published"; tags: string[]; created_at: string; updated_at: string; categories?: { name: string; slug: string } | null };
+export type SiteSettings = { site_name: string; site_description: string | null; owner_name: string; owner_title: string; mobile_number: string; whatsapp_number: string; facebook_url: string | null; profile_image: string | null; about_text: string | null };
+export type R = { ok?: boolean; error?: string };
+export type SaveInput = { id?: string; title: string; description: string; category_id: string; tags: string; featured: boolean; status: string; file?: { path: string; name: string }; preview?: { path: string }; gallery: string[]; keep: string[] };
